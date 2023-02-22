@@ -1,0 +1,64 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
+    <title>Add New Students
+
+    </title>
+  </head>
+  <body>
+    {% include 'navbar.html' %}
+    <h1 class = "text-center my-3">Add New Student</h1>
+    <div class = "container">
+      <div class = "row">
+          <div class = "col-md-12">
+              <div class="card bg-info">
+                  <div class="card-body">
+                      <form action="/stdadd/" method="POST">
+                          {% csrf_token %}
+                        <div class = "md-3">
+                              <label for="roll"><strong>Roll No:</strong></label>
+                              <input type = "NUMBER" class = "form-control " name = "roll" id = "roll" placeholder="Enter your Registeration ID" required style="background-color:lavenderblush">
+                          </div>
+                          <div class = "md-3" >
+                              <label for="name"><strong>Name:</strong></label>
+                              <input type = "text" class = "form-control" name = "name" id = "name" placeholder="Enter your Name" required style="background-color:lavenderblush">
+                          </div>
+                          <div class = "md-3" >
+                              <label for="email"><strong>Email:</strong></label>
+                              <input type = "email" class = "form-control" name = "email" id = "email" placeholder="Enter your Email Adress" required style="background-color:lavenderblush">
+                          </div>
+                          <div class = "md-3">
+                              <label for="phone"><strong>Mobile No:</strong></label>
+                              <input type = "NUMBER" class = "form-control" name = "phone" id = "phone" placeholder="Enter your Phone number"  style="background-color:lavenderblush">
+                          </div>
+                          
+                          <div class="mid-3">
+                              <label for="address"><strong>Address:</strong></label>
+                              <textarea name = "address" id="address" placeholder = " Enter your Address here" rows="5" class = "form-control"></textarea>
+                          </div>
+                          <div class = "container my-2 text-center" >
+                              <button class="btn btn-danger" type="submit">Register  </button>
+                          </div>    
+                      </form>
+
+                  </div>
+              </div>
+
+          </div>
+
+      </div>
+   </div>
+  
+   <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+   <script src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+   <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+  </body>
+
+  </html>
