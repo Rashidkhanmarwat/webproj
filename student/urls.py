@@ -7,7 +7,6 @@ urlpatterns = [
     # path("student", views.student, name = 'student'),
     path("", home),
     path("home/", home),
-    path("stdadd/",stdadd),
-    
+    path("stdadd/",stdadd),   
 ]
 
