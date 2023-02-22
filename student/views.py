@@ -14,6 +14,6 @@ def stdadd(request):
         email = request.POST.get('email')
         phone = request.POST.get('phone')
         address = request.POST.get('address')
-        std = StdBio(rollno = roll, name = name, email = email, phone = phone, address = address)
+        std = StdBio(rollno = roll, name = name, email = email, phone = phone, address=address)
         std.save()
-    return render(request,"addstd.html",{})
+    return render(request,"addstd.html",{ })
