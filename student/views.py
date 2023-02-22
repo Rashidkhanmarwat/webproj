@@ -17,4 +17,3 @@ def stdadd(request):
         std = StdBio(rollno = roll, name = name, email = email, phone = phone, address = address)
         std.save()
     return render(request,"addstd.html",{})
-
