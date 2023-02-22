@@ -8,5 +8,6 @@ urlpatterns = [
     path("", home),
     path("home/", home),
     path("stdadd/",stdadd),   
-]
+
+    ]
 
