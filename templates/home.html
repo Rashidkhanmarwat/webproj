@@ -12,8 +12,54 @@
   </head>
   <body>
     {% include 'navbar.html' %}
-    <h1>Student Management</h1>
+    <h1 class = "text-center my-3">Student Management</h1>
+    <h1 class = "text-center my-3">List of Students</h1>
+    <!--Show the database Data in Table start-->
+    <div class = "container">
+      <div class="row">
+        <div class ="col-md-12">
+          <div class="card">
+            <div class="card-body">
+              <Table class="table table-success table-striped col-md-12">
+                <thead>
+                  <tr class="table-primary">
+                    <th>SNo</th>
+                    <th>ROLLNo</th>
+                    <th>NAME</th>
+                    <th>EMAIL</th>
+                    <th>ADDRESS</th>
+                    <th>PHONE</th>
+                    <th>ACTION</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  {% for s in std %}
+                  <tr>
+                    <td>{{forloop.counter}}</td>
+                    <td>{{s.roll}}</td>
+                    <td>{{s.name}}</td>
+                    <td>{{s.email}}</td>
+                    <td>{{s.address}}</td>
+                    <td>{{s.phone}}</td>
+                    <td>
+                      <a href="/delete-std/{{s.id}}" class="btn btn-danger md-sm">Delete</a>
+                      <a href="/update-std/{{s.id}}" class="btn btn-success md-sm">Update</a>
+                    </td>
+                  </tr>
+                  {% endfor %}
+                </tbody>
+              </table>
 
+            </div>
+
+          </div>
+
+        </div>
+
+      </div>
+    </div>
+
+    <!--Show the database Data in Table end-->
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
     <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
