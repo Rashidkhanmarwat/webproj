@@ -14,37 +14,38 @@
   </head>
   <body>
     {% include 'navbar.html' %}
-    <h1 class = "text-center my-3">Add New Student</h1>
+    <h1 class = "text-center my-3">Update Student</h1>
     <div class = "container">
       <div class = "row">
           <div class = "col-md-6 offset-md-3">
               <div class="card bg-info">
                   <div class="card-body">
-                      <form action="/stdadd/" method="POST">
-                          {% csrf_token %}
+                      <form action="/do-update-std/" method="POST">
+                        {% csrf_token %}
                         <div class = "md-3">
+                            <input name="id" value="{{su.id}}" type="hidden">
                               <label for="roll"><strong>Roll No:</strong></label>
-                              <input type = "NUMBER" class = "form-control " name = "roll" id = "roll" placeholder="Enter your Registeration ID" required style="background-color:lavenderblush">
+                              <input type = "NUMBER" class = "form-control " name = "roll" id = "roll" placeholder="Enter your Registeration ID" style="background-color:lavenderblush" required  value="{{su.roll}}">
                           </div>
                           <div class = "md-3" >
                               <label for="name"><strong>Name:</strong></label>
-                              <input type = "text" class = "form-control" name = "name" id = "name" placeholder="Enter your Name" required style="background-color:lavenderblush">
+                              <input type = "text" class = "form-control" name = "name" id = "name" placeholder="Enter your Name" style="background-color:lavenderblush" required  value="{{su.name}}">
                           </div>
                           <div class = "md-3" >
                               <label for="email"><strong>Email:</strong></label>
-                              <input type = "email" class = "form-control" name = "email" id = "email" placeholder="Enter your Email Adress" required style="background-color:lavenderblush">
+                              <input type = "email" class = "form-control" name = "email" id = "email" placeholder="Enter your Email Adress" style="background-color:lavenderblush" required  value="{{su.email}}">
                           </div>
                           <div class = "md-3">
                               <label for="phone"><strong>Mobile No:</strong></label>
-                              <input type = "NUMBER" class = "form-control" name = "phone" id = "phone" placeholder="Enter your Phone number"  style="background-color:lavenderblush">
+                              <input type = "NUMBER" class = "form-control" name = "phone" id = "phone" placeholder="Enter your Phone number"  style="background-color:lavenderblush" value="{{su.phone}}">
                           </div>
                           
                           <div class="mid-3">
                               <label for="address"><strong>Address:</strong></label>
-                              <textarea name = "address" id="address" placeholder = " Enter your Address here" rows="5" class = "form-control"></textarea>
+                              <textarea name = "address" id="address" placeholder = " Enter your Address here" rows="5" class = "form-control">{{su.address}}</textarea>
                           </div>
                           <div class = "container my-2 text-center" >
-                              <button class="btn btn-danger" type="submit">Register  </button>
+                              <button class="btn btn-success" type="submit">Update      </button>
                           </div>    
                       </form>
 

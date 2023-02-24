@@ -3,9 +3,12 @@ from django.urls import path
 from student import views
 from .views import *
 urlpatterns = [
-    # path("", views.student, name = 'home'),
-    # path("student", views.student, name = 'student'),
     path("", home),
     path("home/", home),
-    path("stdadd/",stdadd),      ]
+    path("stdadd/",stdadd),   
+    path("delete-std/<int:id>",deletestd),
+    path("update-std/<int:id>",updatestd),
+    path("do-update-std/",doupdatestd),
+
+    ]
 
