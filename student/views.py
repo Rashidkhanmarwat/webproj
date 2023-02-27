@@ -1,6 +1,7 @@
 from django.shortcuts import render,redirect,HttpResponse
 from student.models import StdBio
 
+
 # Create your views here.
 def home(request):
     std = StdBio.objects.all()
